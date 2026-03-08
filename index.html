@@ -1,110 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Halle | Developer Card</title>
+<title>Halle | Developer Portfolio</title>
 
-<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
 
 <style>
 
 body{
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg,#ff9ecf,#ffc6e3);
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+font-family:'Poppins',sans-serif;
+margin:0;
+color:#333;
+background:#fdf2f8;
+transition:0.4s;
 }
 
-.card{
-    border:none;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+/* dark mode */
+
+body.dark{
+background:#111;
+color:#eee;
 }
 
-.profile-img{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid #ff7ab6;
+/* particles */
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
 }
 
-.btn-pink{
-    background:#ff4fa3;
-    color:white;
-    border:none;
+/* hero */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
-.btn-pink:hover{
-    background:#e83e8c;
+/* card */
+
+.main-card{
+padding:40px;
+border-radius:25px;
+background:rgba(255,255,255,0.3);
+backdrop-filter:blur(12px);
+box-shadow:0 20px 50px rgba(0,0,0,0.2);
+max-width:400px;
+margin:auto;
 }
 
-.skills span{
-    background:#ffd1ea;
-    padding:6px 12px;
-    border-radius:20px;
-    margin:4px;
-    display:inline-block;
-    font-size:14px;
+/* buttons */
+
+.btn-main{
+background:#ff4fa3;
+color:white;
+border:none;
+border-radius:30px;
+padding:10px 20px;
+}
+
+.btn-main:hover{
+background:#e83e8c;
+}
+
+/* skills */
+
+.skill{
+margin:20px 0;
+}
+
+.progress{
+height:10px;
+border-radius:20px;
+}
+
+/* projects */
+
+.project-card{
+padding:20px;
+border-radius:15px;
+background:white;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-6px);
+}
+
+body.dark .project-card{
+background:#222;
+}
+
+/* toggle */
+
+.toggle-btn{
+position:fixed;
+top:20px;
+right:20px;
+}
+
+section{
+padding:80px 20px;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
-<div class="row justify-content-center">
-<div class="col-md-4">
+<div id="particles-js"></div>
 
-<div class="card text-center p-4">
+<button class="btn btn-main toggle-btn" onclick="toggleMode()">🌙</button>
 
-<img src="https://i.pravatar.cc/150?img=32" class="profile-img mx-auto mb-3" alt="Halle's profile picture">
-<div class="mb-3">
+<section class="hero">
 
-<h3 class="fw-bold">Halle</h3>
-<p class="text-muted">Web Developer • Marketing Intern</p>
+<div class="main-card" data-tilt>
+
+<h1>Halle</h1>
+
+<p>Web Developer • UI/UX Designer</p>
 
 <p>
-I build modern websites for businesses, restaurants and brands.
-Currently working on digital solutions and web systems.
+I build modern digital experiences for businesses,
+restaurants and brands.
 </p>
 
-<div class="skills mb-3">
-<span>HTML</span>
-<span>CSS</span>
-<span>JavaScript</span>
-<span>Bootstrap</span>
-<span>Marketing</span>
-</div>
-
-<div class="d-grid gap-2">
-
-<a href="#" class="btn btn-pink">Portfolio</a>
-
-<a href="https://wa.me/26876880836" class="btn btn-outline-dark">
-WhatsApp
-</a>
-
-<a href="mailto:nosizwedlamini863@gmail.com" class="btn btn-outline-dark">
-Email
-</a>
+<a class="btn btn-main mt-3">View Projects</a>
 
 </div>
 
+</section>
+
+<!-- skills -->
+
+<section>
+
+<div class="container">
+
+<h2 class="text-center mb-5">Skills</h2>
+
+<div class="skill">
+
+HTML
+<div class="progress">
+<div class="progress-bar bg-danger" style="width:90%"></div>
 </div>
 
 </div>
+
+<div class="skill">
+
+CSS
+<div class="progress">
+<div class="progress-bar bg-danger" style="width:85%"></div>
 </div>
+
 </div>
+
+<div class="skill">
+
+JavaScript
+<div class="progress">
+<div class="progress-bar bg-danger" style="width:75%"></div>
+</div>
+
+</div>
+
+<div class="skill">
+
+UI/UX
+<div class="progress">
+<div class="progress-bar bg-danger" style="width:80%"></div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- projects -->
+
+<section>
+
+<div class="container">
+
+<h2 class="text-center mb-5">Projects</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="project-card">
+
+<h4>Restaurant Website</h4>
+
+<p>
+Modern restaurant website with booking system.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="project-card">
+
+<h4>Booking System</h4>
+
+<p>
+Online booking form connected to Google Sheets.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="project-card">
+
+<h4>Developer Card</h4>
+
+<p>
+Personal animated developer portfolio.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+/* dark mode */
+
+function toggleMode(){
+document.body.classList.toggle("dark")
+}
+
+/* particles */
+
+particlesJS("particles-js",{
+
+particles:{
+number:{value:70},
+color:{value:"#ff4fa3"},
+shape:{type:"circle"},
+opacity:{value:0.5},
+size:{value:3},
+line_linked:{
+enable:true,
+distance:150,
+color:"#ff4fa3",
+opacity:0.4
+},
+move:{enable:true,speed:2}
+}
+
+});
+
+</script>
 
 </body>
 </html>
